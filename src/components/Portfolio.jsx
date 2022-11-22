@@ -1,22 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classes from '../styles/Portfolio.css';
 import ToolBar from './ToolBar';
 import ProjectList from './ProjectList';
 
-class Portfolio extends React.Component {
-    
-    render()
+const Portfolio = (props) => {
+    const [projects, setProjects] = useState(props.projects);
+    const [filters, setFilters] = useState(props.filters);
+      
+    const Sort = (filter) => 
     {
-        const cards = this.props;
-        
-        console.log(cards);
+        var buffer= [];
 
-        return(  
-        <>
-            <ToolBar filters={["All", "Websites", "Flayers", "Business Cards"]} selected="All" onSelectFilter={(filter) => {console.log(filter);}}/>
-            <ProjectList cards = {cards}/>            
-        </>
-        )
-    }
+        filter = 'Flayers';       
+        var projectsModels = projects;
+        var length = projectsModels.length;
+        for (var i=0;i< length;i++){
+            var category = projectsModels[i].category;            
+            if (projectsModels[i].category == filter)
+                buffer.push(projectsModels[i]);            
+        }
+        setProjects(buffer);
+    }      
+        
+    return(  
+    <>
+        <ToolBar filters={filters} selected="Flayers" onSelectFilter={() =>Sort(filters.selected)}/>            
+        <ProjectList projects = {projects}/>
+    </>
+    )    
 }
 export default Portfolio;

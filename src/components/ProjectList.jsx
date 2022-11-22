@@ -1,22 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classes from '../styles/ProjectList.css';
-class ProjectList extends React.Component {
+const ProjectList = (props) => 
+{
+    console.log(props.projects);
+
+    const projects = props.projects;
     
-    render()
-    {
-        const cards = this.props;
-        console.log(cards.cards.data);
-        return(  
-            <div className='box'>
-                {cards.cards.data.map 
-                    (
-                        (card, index)=>
-                        <div className = 'item' card={card} key={index} ><img src={card.img}></img></div>
-                    )
-                }  
-            </div>
-        
-        )
-    }
+    console.log(projects);
+    return(  
+        <div className='box'>
+            {projects.map 
+                (
+                    (project, index)=>
+                    <div className = 'item' project={project} key={index} ><img src={project.img}></img></div>
+                )
+            }  
+        </div>        
+    )    
 }
 export default ProjectList;

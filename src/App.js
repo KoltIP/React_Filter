@@ -3,7 +3,7 @@ import ToolBar from './components/ToolBar';
 import Portfolio from './components/Portfolio';
 function App() {
 
-  const cards = [{
+  const projects = [{
     img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/mon.jpg",
     category: "Business Cards"
   }, {
@@ -56,9 +56,11 @@ function App() {
     category: "Flayers"
   }]
 
+  const filters = ["All", "Websites", "Flayers", "Business Cards"];
+
   return (
     <div>            
-      <Portfolio data={cards}></Portfolio>
+      <Portfolio projects={projects} filters={filters}></Portfolio>
     </div>
   );
 };
