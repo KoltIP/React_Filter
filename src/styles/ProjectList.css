@@ -1,0 +1,13 @@
+
+.box{
+    height: 1000px;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+}
+
+.item{
+    flex: 1;
+    margin-right:10px;
+}

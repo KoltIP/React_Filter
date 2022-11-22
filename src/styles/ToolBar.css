@@ -1,0 +1,33 @@
+.toolBarItem{
+    font-size: small;
+    font-weight: 300;
+    color: black;
+    border: 2px solid grey;
+    margin-right: 10px;
+    height: 25px;
+    width:100px;    
+    text-align: center;
+}
+
+.toolBarFlex{
+    margin: 20px;
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.toolBarItemActive{
+    color:white;
+    background-color: grey;
+    font-size: small;
+    font-weight: 300;
+    border: 2px solid grey;
+    margin-right: 10px;
+    height: 25px;
+    width:100px;    
+    text-align: center;
+}
+
+  
+  
